@@ -1,4 +1,4 @@
-// Cria refência ao form e ao elemento h3 (onde será exibido a resposta)
+// Cria refência ao form e ao elemento h3 (Onde será exibido a resposta).
 const frm = document.querySelector("form")
 const resp = document.querySelector("h3")
 
