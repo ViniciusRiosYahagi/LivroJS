@@ -48,5 +48,19 @@ frm.btFiltrar.addEventListener("click", () => {
 })
 
 frm.btSimular.addEventListener("click", () => {
-  const 
+  const desconto = Number(prompt("Qual o percentual de desconto: "))
+  if (desconto == 0 || isNaN(desconto)) {
+    return
+  }
+
+  const carrosDesc = carros.map((aux) => ({
+    modelo: aux.modelo,
+    preco: aux.preco = (aux.preco * desconto / 100)
+  }))
+
+  let lista = "" 
+  for(const carro of carrosDesc) {
+    lista += `${carro.modelo} - R$: ${carro.preco.toFixed(2)}\n`
+  }
+  resp.innerText = `carros com desconto: ${desconto}%\n${"-".repeat(40)}\n${lista}`
 })
