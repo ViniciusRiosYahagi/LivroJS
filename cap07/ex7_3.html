@@ -1,0 +1,9 @@
+<script>
+  const palavra = prompt("Palavra: ")
+
+  const inverso = palavra.split("").reverse().join("")
+
+  const inveroFormatado = inverso.charAt(0).toUpperCase() + inverso.slice(1).toLowerCase()
+
+  alert(`Palavra: ${palavra}\n Invertida: ${inveroFormatado}`)
+</script>
