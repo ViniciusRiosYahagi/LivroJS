@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/estilos.css">
+  <title>Exercício 7 - C</title>
+</head>
+<body>
+  <img src="img/exerc.jpg" alt="Programa" class="alta">
+  <h1>Multa de Trânsito</h1>
+  <form>
+    <label> Data da Infração:
+      <input 
+        type="date" 
+        id="inData" 
+      >
+    </label>
+    <br>
+    <label> Valor da Multa R$:
+      <input 
+        type="number" 
+        step="0.01"
+        id="inValor" 
+        >
+    </label>
+    <br>
+    <button type="submit">Calcular Data Limite e Valor com Desconto</button>
+  </form>
+  <h3 id="outDataLimite"></h3>
+  <span id="outValorDesc"></span>
+  <script src="js/resp7_c.js"></script>
+</body>
+</html>

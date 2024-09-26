@@ -15,3 +15,7 @@ h1 {
 .alinha-direita {
   text-align: right;
 }
+
+input {
+  margin: 15px;
+}
