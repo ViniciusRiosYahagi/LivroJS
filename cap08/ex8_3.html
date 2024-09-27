@@ -6,10 +6,8 @@
       return
     }
 
-    let soma = 0
-    for (const nota of notas) {
-      soma += nota
-    }
+    let soma = notas.reduce((a, b) => a += b, 0)
+    
     const media = soma / num
     console.log(`Média: ${media.toFixed(1)}`)
   }
