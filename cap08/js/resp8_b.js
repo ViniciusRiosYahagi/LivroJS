@@ -25,7 +25,7 @@ function chackName(name) {
 
 function getSurname(name) {
   const nameArrey = name.split(" ")
-  const lastName = nameArrey[nameArrey.length -1]
+  const lastName = nameArrey.pop()
 
   return lastName.toLowerCase()
 }
