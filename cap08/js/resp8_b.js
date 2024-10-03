@@ -7,31 +7,33 @@ frm.addEventListener("submit", (e) => {
   const name = frm.inName.value
 
   if (chackName(name)) {
-    countVowels()
+    const lastName = getSurname(name)
+    countVowels(name, lastName)
   }
 })
 
 function chackName(name) {
   const name2 = name.trim()
-
   if (!name2.includes(" ")) {
     frm.inName.placeholder = "Please enter full name"
     frm.inName.value = "" 
+    return false
   } else {
-    getSurname(name)
+    return true
   }
 }
 
 function getSurname(name) {
   const nameArrey = name.split(" ")
   const lastName = nameArrey[nameArrey.length -1]
-  const lowerName = lastName.toLowerCase()
-  
-  return lowerName
+
+  return lastName.toLowerCase()
 }
 
-const lowerName = getSurname()
-
 function countVowels(name, lastName) {
-  
+  const vowels = name.match(/[aeiou]/gi)
+  const qntVowels = vowels.length
+  const concatZeroToVowels = qntVowels < 10 ? "0" + qntVowels : qntVowels
+
+  resp.innerText = `${lastName}${concatZeroToVowels}`
 }
