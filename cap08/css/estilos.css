@@ -6,6 +6,8 @@ img.exerc { float: left; height: 260px; width: 260px; }
 span { margin-left: 70px; }
 select { width: 150px; }
 input { margin: 5px; }
+button { margin: 5px; }
+select { margin: 5px; }
 .detalhes { width: 380px; }
 .oculta { display: none; }
 .exibe { display: inline; }
