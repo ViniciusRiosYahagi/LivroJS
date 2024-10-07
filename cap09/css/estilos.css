@@ -2,6 +2,7 @@ pre { font-size: 1.2em; }
 .cores-Brasil { color: rgb(255, 255, 255); background-color: red; }
 .cores-Pelotas { color: blue; background-color: yellow; }
 .cores-Farroupilha { color: green; background-color: white; }
+.nenhum { background-color: #fff;}
 .exibir {display: block;}
 .ocultar {display: none;}
 .exemplo91 {
