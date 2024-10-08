@@ -33,6 +33,65 @@ function checkBetExist(weight) {
   }
 }
 
-function showBets() {
-  
+function showBets() { 
+  if (!localStorage.getItem("watermelonName")) {
+    resp.innerText = ""
+    return
+  }
+
+  const names = localStorage.getItem("watermelonName").split(";")
+  const weight = localStorage.getItem("watermelonWeight").split(";")
+
+  let lines
+
+  for (let i = 0; i < names.length; i++) {
+    lines += `${names[i]} - ${weight[i]}gr \n`
+  }
+
+  resp.innerText = lines
 }
+
+window.addEventListener("load", showBets)
+
+frm.btWinner.addEventListener("click", () => {
+  if (!localStorage.getItem("watermelonName")) {
+    alert("There are no registered bets")
+    return
+  }
+
+  const correctWeight = Number(prompt("What is the correct weight of a watermelon?"))
+
+  if (correctWeight == 0 || isNaN(correctWeight)) {
+    return
+  }
+
+  const names = localStorage.getItem("watermelonName").split(";")
+  const weight = localStorage.getItem("watermelonWeight").split(";")
+
+  let winnerName = names[0]
+  let winnerWeight = Number(weight[0])
+
+  for (let i = 1; i < names.length; i++) {
+    const difWinner = Math.abs(winnerWeight - correctWeight)
+    const difBet = Math.abs(Number(weight[i]) - correctWeight)
+
+    if (difWinner < difBet) {
+      winnerName = names[i]
+      winnerWeight = Number(weight[i])
+    }
+  }
+
+  let msg = `Result - Correct Weight ${correctWeight}gr`
+  msg += "\n----------------------------------------------"
+  msg += `\nWinner: ${winnerName}`
+  msg += `\nBet: ${winnerWeight}gr`
+  alert(msg)
+})
+
+frm.btClear.addEventListener("click", () =>  {
+  if (confirm("Confirm deletion of all bets?")) {
+    localStorage.removeItem("watermelonName")
+    localStorage.removeItem("watermelonWeight")
+    showBets()
+  }
+})
