@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/estilos.css">
+  <title>Exemplo 9.3</title>
+</head>
+<body style="display: flex;">
+  <img src="img/ex9_3.jpg" alt="melancia" style="height: 250px;">
+  <form style="display: flex; flex-direction: column;">
+    <h1>What is the weight of watermelon?</h1>
+    <label for="inName">Bettor's Name</label>
+    <input type="text" id="inName" name="inName" required>
+    <br>
+    <label for="inWeight">weight (in grams)</label>
+    <input type="number" id="inWeight" name="inWeight" step="0.01" required>
+    <div style="margin-top: 10px;">
+      <button type="submit">Bet</button>
+      <button id="btWinner">Winner</button>
+      <button id="btClear">Clear bets</button>
+    </div>
+  </form>
+  <pre></pre>
+  <script src="js/ex9_3.js"></script>
+</body>
+</html>
