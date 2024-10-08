@@ -19,9 +19,13 @@ frm.addEventListener("submit", (e) => {
     localStorage.setItem("watermelonName", watermelonName)
     localStorage.setItem("watermelonWeight", watermelonWeight)
   } else {
-    localStorage.setItem("watermelon", name)
+    localStorage.setItem("watermelonName", name)
     localStorage.setItem("watermelonWeight", weight)
   }
+
+  showBets()
+  frm.reset()
+  frm.inName.focus()
 })
 
 function checkBetExist(weight) {
@@ -42,7 +46,7 @@ function showBets() {
   const names = localStorage.getItem("watermelonName").split(";")
   const weight = localStorage.getItem("watermelonWeight").split(";")
 
-  let lines
+  let lines = ""
 
   for (let i = 0; i < names.length; i++) {
     lines += `${names[i]} - ${weight[i]}gr \n`
@@ -66,18 +70,18 @@ frm.btWinner.addEventListener("click", () => {
   }
 
   const names = localStorage.getItem("watermelonName").split(";")
-  const weight = localStorage.getItem("watermelonWeight").split(";")
+  const weights = localStorage.getItem("watermelonWeight").split(";")
 
   let winnerName = names[0]
-  let winnerWeight = Number(weight[0])
+  let winnerWeight = Number(weights[0])
 
   for (let i = 1; i < names.length; i++) {
     const difWinner = Math.abs(winnerWeight - correctWeight)
-    const difBet = Math.abs(Number(weight[i]) - correctWeight)
+    const difBet = Math.abs(Number(weights[i]) - correctWeight)
 
-    if (difWinner < difBet) {
+    if (difBet < difWinner) {
       winnerName = names[i]
-      winnerWeight = Number(weight[i])
+      winnerWeight = Number(weights[i])
     }
   }
 
