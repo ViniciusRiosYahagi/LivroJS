@@ -18,14 +18,13 @@ frm.addEventListener("submit", (e) => {
 function inserirLinha(titulo, genero) {
   const linha = tbFilmes.insertRow(-1)
 
-	const col0 = linha.insertCell(0).innerText = titulo
-	const col1 = linha.insertCell(1).innerText = genero
-	const col2 = linha.insertCell(2).innerHTML = "<i class='exclui' title='Excluir'>&#10008</i>"
-
+	const col0 = linha.insertCell(0)
 	col0.innerText = titulo
+	const col1 = linha.insertCell(1)
 	col1.innerText = genero
+	const col2 = linha.insertCell(2)
 	col2.innerHTML = "<i class='exclui' title='Excluir'>&#10008</i>"
-
+	
 	col2.querySelector(".exclui").addEventListener("click", () => {
 		linha.remove()
 		excluirFilme(titulo)
