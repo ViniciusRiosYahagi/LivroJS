@@ -22,32 +22,30 @@ frm.btMontar.addEventListener("click", () => {
 
   const clubes = document.querySelectorAll("#divJogos h5")
 
-  if (clubes.length % 2 === 0) {
+  if (clubes.length == 0 || clubes.length % 2 == 1) {
+    alert("O número de clubes inseridos deve ser par")
+    return
+  }
 
-    const h3 = document.createElement("h3")
-    h3.innerText = "Tabela de Jogos"
-    divJogos.appendChild(h3)
+  const h3 = document.createElement("h3")
+  h3.innerText = "Tabela de Jogos"
+  divJogos.appendChild(h3)
 
-    const novaTable = document.createElement("table")
-    novaTable.className = "table table-striped"
-    divJogos.appendChild(novaTable)
+  const novaTable = document.createElement("table")
+  novaTable.className = "table table-striped"
+  divJogos.appendChild(novaTable)
 
-    let linha
-    for (let i = 0; i < clubes.length; i++) {
-      if (i % 2 == 0) {
+  let linha
+  for (let i = 0; i < clubes.length; i++) {
+    if (i % 2 == 0) {
         linha = novaTable.insertRow(-1)
         const col0 = linha.insertCell(0)
         col0.textContent = clubes[i].innerText
-      } else {
+    } else {
         const col1 = linha.insertCell(1)
         col1.textContent = clubes[i].innerText
-      }
-    } 
-  } else {
-      alert("O número de clubes inseridos deve ser par")
-      return
-  }
-
+    }
+  } 
   btMontar.disabled = true
 }) 
 
