@@ -1,1 +1,1 @@
-O principal objetivo desse repositório é demonstrar minha vontade e objetivo de crescer na área da programação, como um bom desenvolvedor, a fim de construir uma carreira na área de TI.
+The main purpose of this repository is to showcase my determination and goal to grow in the programming field as a skilled developer, aiming to build a successful career in the IT industry.
